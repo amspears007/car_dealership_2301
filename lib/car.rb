@@ -12,11 +12,11 @@ class Car
   end
 
   def make
-    @make_model.delete(' Mustang')
+    make_model.split[0]
   end
 
   def model
-    @make_model.delete('Ford ')
+    make_model.split[1]
   end
 
   def total_cost
