@@ -19,9 +19,14 @@ class Dealership
 
   def cars_by_make(make)
     inventory.find_all do |car|
-      car.make == make
-      # require 'pry'; binding.pry
-      
+      car.make == make  
     end
+  end
+
+  def total_value
+    inventory.map do |car|
+      car.total_cost
+    end
+    .sum
   end
 end
