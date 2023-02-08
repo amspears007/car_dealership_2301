@@ -8,13 +8,13 @@ RSpec.describe Car do
     expect(car).to be_a Car
   end
 
-  xit 'has a make' do
+  it 'has a make' do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.make).to eq("Ford")
   end
 
-  xit 'has a model' do
+  it 'has a model' do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.model).to eq("Mustang")
@@ -36,5 +36,19 @@ RSpec.describe Car do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.total_cost).to eq(54000)
+  end
+
+  it 'starts with no color' do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(car.color).to eq(nil)
+  end
+
+  xit 'can be painted with a color' do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    car.paint!(:blue)
+
+    expect(car.color).to eq(:blue)
   end
 end
